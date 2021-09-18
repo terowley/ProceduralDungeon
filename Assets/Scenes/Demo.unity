@@ -612,15 +612,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524e71f8cecfcb848a1826d46bbc9199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 100
-  numberOfObstacles: 3
+  numberOfRooms: 7
+  numberOfObstacles: 0
   possibleObstacleSizes:
   - {x: 3, y: 1}
   - {x: 1, y: 3}
   - {x: 2, y: 1}
   - {x: 1, y: 2}
   - {x: 1, y: 1}
-  numberOfEnemies: 0
+  amountOfFood: 3
+  possibleFoodItems:
+  - {fileID: 569753757760154325, guid: 523410a85e4d64942b65c911d0035512, type: 3}
+  numberOfEnemies: 1
   possibleEnemies:
   - {fileID: 1747285033562184, guid: e8b1d068df343e14a95123909391d5df, type: 3}
   goalPrefab: {fileID: 1648284490830996, guid: cfc35090e574a7542bdc6c3452e73375, type: 3}

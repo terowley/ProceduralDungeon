@@ -8,19 +8,14 @@ public class PlayerMovement : MonoBehaviour {
 	//[SerializeField]
 	public float speed;
 	public int maxHealth = 200;
-	public static int currentHealth = 100;
+	
 	private Rigidbody2D rb2D;
 
 	public HealthBar  healthBar;
-	//public EnterDoor EnterDoor;
+	
 	public static string heading;
-	/*
-	void awake()
-	{
-		this.GetComponent<Renderer>().enabled = false;
-	}
-	*/
-	// Use this for initialization
+	public static int currentHealth = 100;
+
 	void Start () {
 		//currentHealth = 100;
 		healthBar.SetMaxHealth(200);
@@ -29,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 		//Get a component reference to this object's Rigidbody2D
 		//rb2D = GetComponent<Rigidbody2D>();
 
-		//StartCoroutine(FoodCheck());
+		StartCoroutine(FoodCheck());
 	}
 
 	// Update is called once per frame
@@ -45,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 
-	/*
+	
 		IEnumerator FoodCheck()
 		{
 			while (true)
@@ -67,18 +62,21 @@ public class PlayerMovement : MonoBehaviour {
 			healthBar.SetHealth(currentHealth);
 			if (currentHealth < 0)
 			{
-				//This is wrong - need class for starve death, GUI poster and end game
-				ReachGoal.EndGame();
+			//This is wrong - need class for starve death, GUI poster and end game
+
+			//ReachGoal.EndGame();
+
+			Debug.Log("STARVED!!");
 			}
 
 		}
 
-
+	/*
 		void OnEnable()
 		{
 			//Debug.Log("in OnEnable");
 			currentHealth = PlayerPrefs.GetInt("health");
-			heading = PlayerPrefs.GetString("heading");
+			
 		}
-		*/
+	*/	
 }

@@ -14,6 +14,11 @@ public class DungeonGeneration : MonoBehaviour {
 	private Vector2Int[] possibleObstacleSizes;
 
 	[SerializeField]
+	private int amountOfFood;
+	[SerializeField]
+	private GameObject[] possibleFoodItems;
+
+	[SerializeField]
 	private int numberOfEnemies;
 	[SerializeField]
 	private GameObject[] possibleEnemies;
@@ -95,9 +100,10 @@ public class DungeonGeneration : MonoBehaviour {
 				}
 			}
 
-			// populate Obstacle (tiles) and Prefabs ( enimies and NPC)
+			// populate Obstacle (tiles) and Prefabs ( enemies, food and NPC)
 			room.PopulateObstacles (this.numberOfObstacles, this.possibleObstacleSizes);
 			room.PopulatePrefabs (this.numberOfEnemies, this.possibleEnemies);
+			room.PopulatePrefabs (this.amountOfFood, this.possibleFoodItems);
 
 
 			// code to find Goal Room - most distant room

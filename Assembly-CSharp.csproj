@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\BasicDoor.cs" />
     <Compile Include="Assets\Scripts\BasicMovement.cs" />
     <Compile Include="Assets\Scripts\DungeonGeneration.cs" />
+    <Compile Include="Assets\Scripts\EatFood.cs" />
     <Compile Include="Assets\Scripts\EnterDoor.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\KillEnemy.cs" />
