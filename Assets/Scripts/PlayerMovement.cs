@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour {
 	public static string heading;
 	public static int currentHealth = 100;
 
+	Coroutine co;
+
+	GameObject loseImage;
+
+
 	void Start () {
 		//currentHealth = 100;
 		healthBar.SetMaxHealth(200);
@@ -23,8 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		//Get a component reference to this object's Rigidbody2D
 		//rb2D = GetComponent<Rigidbody2D>();
-
-		StartCoroutine(FoodCheck());
+		//loseImage = GameObject.Find("LoseImage");
+		co = StartCoroutine(FoodCheck());
 	}
 
 	// Update is called once per frame
@@ -62,14 +67,29 @@ public class PlayerMovement : MonoBehaviour {
 			healthBar.SetHealth(currentHealth);
 			if (currentHealth < 0)
 			{
-			//This is wrong - need class for starve death, GUI poster and end game
+			
+			StopCoroutine(co);
+			
+			//loseImage.SetActive(true);
 
-			//ReachGoal.EndGame();
-
-			Debug.Log("STARVED!!");
+			Debug.Log("STARVED!! health = "+currentHealth);
+			//Wait 3 seconds
+			Invoke("EndOfGame", 3);
 			}
 
 		}
+
+		void EndOfGame ()
+		{
+		//Test if in editor or play mode
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#endif
+		Application.Quit();
+
+		//loseImage.SetActive(false);
+
+	}
 
 	/*
 		void OnEnable()

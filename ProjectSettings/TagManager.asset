@@ -8,6 +8,9 @@ TagManager:
   - Dungeon
   - Enemy
   - Door
+  - Food
+  - Won
+  - Lost
   layers:
   - Default
   - TransparentFX

@@ -62,9 +62,25 @@ public class DungeonGeneration : MonoBehaviour {
 
 		this.currentRoom.AddPopulationToTilemap (tilemap, this.obstacleTile);
 		
+		
+		//GameObject loseImage = GameObject.FindGameObjectWithTag("Lost");
+		
+		GameObject loseImage = GameObject.Find("LoseImage");
+		loseImage.SetActive(false);
+		/*
+		GameObject winImage = GameObject.Find("WinImage");
+		winImage.SetActive(false);
+		*/
 	}
 
 	private Room GenerateDungeon() {
+		/*
+		GameObject loseImage = GameObject.Find("LoseImage");
+		loseImage.SetActive(false);
+		GameObject winImage = GameObject.Find("WinImage");
+		winImage.SetActive(false);
+		*/
+
 		int gridSize = 3 * numberOfRooms;
 
 		rooms = new Room[gridSize, gridSize];
